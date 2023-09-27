@@ -6,6 +6,7 @@ from .serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 # Create your views here.
 
@@ -27,6 +28,8 @@ class UserCreate(APIView):
 
 
 class UserList(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, permissions.IsAdminUser]
 
     def get(self, request, format=None):
         """
@@ -41,6 +44,9 @@ class UserUpdate(APIView):
     """
     List all users, or create a new user.
     """
+
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def put(self, request, format=None):
         """
@@ -67,6 +73,9 @@ class UserDelete(APIView):
     """
     Delete a user.
     """
+
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def delete(self, request, format=None):
         """
