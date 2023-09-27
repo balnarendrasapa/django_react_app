@@ -14,3 +14,5 @@ install_backend:
 	pip install poetry
 	poetry install
 
+.PHONY: install
+install: install_frontend install_backend
