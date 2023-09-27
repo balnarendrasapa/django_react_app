@@ -5,7 +5,6 @@ run_frontend:
 
 .PHONY: install_frontend
 install_frontend:
-	git config --global --add safe.directory /workspace
 	@echo "Installing frontend..."
 	@cd frontend && npm install
 
