@@ -18,7 +18,7 @@ install_frontend:
 .PHONY: install_backend
 install_backend:
 	@echo "Installing backend..."
-	poetry install
+	@cd api && poetry install
 
 .PHONY: install
 install: install_frontend install_backend
