@@ -6,7 +6,9 @@ run_frontend:
 .PHONY: run_backend
 run_backend:
 	@echo "Running backend..."
-	@poetry run python api/manage.py runserver
+	@python3 api/manage.py makemigrations
+	@python3 api/manage.py migrate
+	@python3 api/manage.py runserver
 
 .PHONY: install_frontend
 install_frontend:
@@ -16,11 +18,15 @@ install_frontend:
 .PHONY: install_backend
 install_backend:
 	@echo "Installing backend..."
-	pip install poetry
-	poetry install
+	@cd api && poetry install
 
 .PHONY: install
 install: install_frontend install_backend
 
 .PHONY: run
 run: run_frontend run_backend
+
+# stop server
+.PHONY: stopserver
+stopserver:
+	fuser -k 5173/tcp &

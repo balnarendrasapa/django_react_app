@@ -21,3 +21,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     psmisc \
     libpython3.11-dev 
+
+# Install dependencies using Poetry
+RUN pip install poetry psycopg2-binary && \
+    poetry config virtualenvs.create false 
