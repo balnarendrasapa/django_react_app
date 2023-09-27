@@ -18,7 +18,6 @@ install_frontend:
 .PHONY: install_backend
 install_backend:
 	@echo "Installing backend..."
-	pip install poetry
 	poetry install
 
 .PHONY: install
