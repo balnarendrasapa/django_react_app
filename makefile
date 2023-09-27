@@ -6,6 +6,7 @@ run_frontend:
 .PHONY: run_backend
 run_backend:
 	@echo "Running backend..."
+	@poetry run python api/manage.py migrate
 	@poetry run python api/manage.py runserver
 
 .PHONY: install_frontend
