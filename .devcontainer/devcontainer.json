@@ -19,10 +19,7 @@
 				"ms-vscode.makefile-tools"
 			]
 		}
-	},
-	"mounts": [
-		"source=C:/Users/bnsap/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-	]
+	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
