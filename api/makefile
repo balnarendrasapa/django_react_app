@@ -9,7 +9,3 @@ run:
 install:
 	@echo "Installing backend..."
 	@poetry install
-
-.PHONY: stopserver
-stopserver:
-	fuser -k 8000/tcp &
