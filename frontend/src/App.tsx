@@ -1,5 +1,5 @@
 // import './App.css'
-import Message from './Message'
+import Message from './components/Message'
 function App() {
 
   return (
