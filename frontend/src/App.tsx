@@ -1,10 +1,10 @@
 // import './App.css'
-import Message from './components/Message'
+import Header from './components/Header'
 function App() {
 
   return (
     <>
-      <Message />
+      <Header />
     </>
   )
 }
